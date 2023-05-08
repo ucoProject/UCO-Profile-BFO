@@ -1,0 +1,493 @@
+# imports: http://example.org/ontology/uco-bfo
+
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sh-bfo: <http://example.org/shapes/bfo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/shapes/bfo>
+	a owl:Ontology ;
+	rdfs:comment "These shapes are defined in reference to the 2014-05-03 version of BFO, due to 'The incorporation of core relations have been postponed to version BFO 2.1 OWL'."@en ;
+	owl:imports <http://example.org/ontology/uco-bfo> ;
+	.
+
+sh-bfo:BFO_0000001-shape
+	a sh:NodeShape ;
+	rdfs:comment "entity"@en ;
+	sh:targetClass obo:BFO_0000001 ;
+	.
+
+sh-bfo:BFO_0000002-shape
+	a sh:NodeShape ;
+	rdfs:comment "continuant"@en ;
+	sh:targetClass obo:BFO_0000002 ;
+	.
+
+sh-bfo:BFO_0000003-shape
+	a sh:NodeShape ;
+	rdfs:comment "occurrent"@en ;
+	sh:targetClass obo:BFO_0000003 ;
+	.
+
+sh-bfo:BFO_0000004-shape
+	a sh:NodeShape ;
+	rdfs:comment "independent continuant"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:maxCount "0"^^xsd:integer ;
+			sh:path obo:BFO_0000169 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000020 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000031 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000020 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000031 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000186 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000004 ;
+	.
+
+sh-bfo:BFO_0000006-shape
+	a sh:NodeShape ;
+	rdfs:comment "spatial region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000006 ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000006 ;
+			sh:path obo:BFO_0000178 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000006 ;
+			sh:path obo:BFO_0000186 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000006 ;
+			sh:path obo:BFO_0000187 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000006 ;
+	.
+
+sh-bfo:BFO_0000008-shape
+	a sh:NodeShape ;
+	rdfs:comment "temporal region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000008 ;
+			sh:path obo:BFO_0000117 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000008 ;
+			sh:path obo:BFO_0000132 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000008 ;
+	.
+
+sh-bfo:BFO_0000011-shape
+	a sh:NodeShape ;
+	rdfs:comment "spatiotemporal region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000011 ;
+			sh:path obo:BFO_0000117 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000011 ;
+			sh:path obo:BFO_0000132 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000011 ;
+	.
+
+sh-bfo:BFO_0000015-shape
+	a sh:NodeShape ;
+	rdfs:comment "process"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000015 ;
+			sh:path obo:BFO_0000132 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000015 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000035 ;
+				]
+			) ;
+			sh:path obo:BFO_0000117 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000015 ;
+	.
+
+sh-bfo:BFO_0000020-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically dependent continuant"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000004 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000031 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000004 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000031 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000186 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000020 ;
+	.
+
+sh-bfo:BFO_0000031-shape
+	a sh:NodeShape ;
+	rdfs:comment "generically dependent continuant"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000004 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000020 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000004 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000020 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000186 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000031 ;
+	.
+
+sh-bfo:BFO_0000035-shape
+	a sh:NodeShape ;
+	rdfs:comment "process boundary"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000011 ;
+			sh:path obo:BFO_0000130 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000035 ;
+			sh:path obo:BFO_0000117 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000148 ;
+			sh:path obo:BFO_0000108 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000015 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000035 ;
+				]
+			) ;
+			sh:path obo:BFO_0000132 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000035 ;
+	.
+
+sh-bfo:BFO_0000108-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "exists at"@en ;
+	sh:class obo:BFO_0000001 ;
+	sh:targetSubjectsOf obo:BFO_0000108 ;
+	.
+
+sh-bfo:BFO_0000108-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "exists at"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:targetObjectsOf obo:BFO_0000108 ;
+	.
+
+sh-bfo:BFO_0000117-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "has occurrent part"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000117 ;
+	.
+
+sh-bfo:BFO_0000117-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "has occurrent part"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000117 ;
+	.
+
+sh-bfo:BFO_0000118-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "has proper occurrent part"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000118 ;
+	.
+
+sh-bfo:BFO_0000118-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "has proper occurrent part"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000118 ;
+	.
+
+sh-bfo:BFO_0000126-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "has spatiotemporal occupant"@en ;
+	sh:class obo:BFO_0000011 ;
+	sh:targetSubjectsOf obo:BFO_0000126 ;
+	.
+
+sh-bfo:BFO_0000126-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "has spatiotemporal occupant"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000126 ;
+	.
+
+sh-bfo:BFO_0000130-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "occupies spatiotemporal region"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000130 ;
+	.
+
+sh-bfo:BFO_0000130-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "occupies spatiotemporal region"@en ;
+	sh:class obo:BFO_0000011 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000130 ;
+	.
+
+sh-bfo:BFO_0000132-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of occurrent"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000132 ;
+	.
+
+sh-bfo:BFO_0000132-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of occurrent"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000132 ;
+	.
+
+sh-bfo:BFO_0000148-shape
+	a sh:NodeShape ;
+	rdfs:comment "zero-dimensional temporal region"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:path obo:BFO_0000118 ;
+	] ;
+	sh:targetClass obo:BFO_0000148 ;
+	.
+
+sh-bfo:BFO_0000169-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depends on at some time"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000169 ;
+	.
+
+sh-bfo:BFO_0000169-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depends on at some time"@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000004 ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000006 ;
+			] ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000169 ;
+	.
+
+sh-bfo:BFO_0000176-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at some time"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000176 ;
+	.
+
+sh-bfo:BFO_0000176-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at some time"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetObjectsOf obo:BFO_0000176 ;
+	.
+
+sh-bfo:BFO_0000178-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part at some time"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000178 ;
+	.
+
+sh-bfo:BFO_0000178-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part at some time"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000178 ;
+	.
+
+sh-bfo:BFO_0000186-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at all times that whole exists"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000186 ;
+	.
+
+sh-bfo:BFO_0000186-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at all times that whole exists"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000186 ;
+	.
+
+sh-bfo:BFO_0000187-domain-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part at all times that part exists"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000187 ;
+	.
+
+sh-bfo:BFO_0000187-range-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part at all times that part exists"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000187 ;
+	.
+

@@ -68,8 +68,9 @@ catalog-v001.xml: \
 	    $(ttl_basenames)
 	mv _$@ $@
 
+# TODO: Due to a bug in rdf-toolkit.jar with sorting blank nodes under certain conditions, this shapes file is not checked for normalized form.
+# $(check_ttl_targets)
 check: \
-  $(check_ttl_targets) \
   catalog-v001.xml
 
 check-%.ttl: \
