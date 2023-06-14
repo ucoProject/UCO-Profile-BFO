@@ -18,33 +18,10 @@ SHELL := /bin/bash
 
 top_srcdir := $(shell cd .. ; pwd)
 
-uco_srcdir := $(top_srcdir)/dependencies/UCO
-
-RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
+uco_srcdir := $(top_srcdir)/dependencies/CDO-Shapes-BFO/dependencies/UCO
 
 all: \
   catalog-v001.xml
-
-$(RDF_TOOLKIT_JAR):
-	@echo "DEBUG:dependencies/Makefile:top_srcdir=$(top_srcdir)" >&2
-	@echo "ERROR:dependencies/Makefile:rdf-toolkit.jar not found.  Did you run `make` from the top source directory?" >&2
-	@test -r $@
-
-BFO.ttl: \
-  BFO/releases/2014-05-03/owl-group/bfo.owl \
-  $(RDF_TOOLKIT_JAR) \
-  $(top_srcdir)/.venv.done.log
-	source $(top_srcdir)/venv/bin/activate \
-	  && pyshacl \
-	    --shacl UCO/ontology/owl/owl.ttl \
-	    $<
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source $< \
-	  --source-format rdf-xml \
-	  --target _$@ \
-	  --target-format turtle
-	mv _$@ $@
 
 catalog-v001.xml: \
   $(top_srcdir)/.venv.done.log \
@@ -67,24 +44,12 @@ check: \
 
 clean:
 	@rm -f \
-	  BFO.ttl \
 	  catalog-v001.xml \
 	  imports-transitive.ttl
 
 # This recipe intentionally does not incorporate CDO ontologies (UCO,
 # CASE, etc.), to avoid redundant imports between multiple profiles.
 imports-transitive.ttl: \
-  BFO.ttl
-	source $(top_srcdir)/venv/bin/activate \
-	  && rdfpipe \
-	    --output-format turtle \
-	    $^ \
-	    > __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
+  $(top_srcdir)/dependencies/CDO-Shapes-BFO/dependencies/imports-transitive.ttl
+	cp $< _$@
 	mv _$@ $@
