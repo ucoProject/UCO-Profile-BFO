@@ -18,6 +18,10 @@
 	owl:imports <http://example.org/ontology/uco-bfo> ;
 	.
 
+kb:Event-36ca992e-47e5-43a5-b344-71465c222a05
+	a drafting:Event ;
+	.
+
 kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 	a uco-observable:File ;
 	.

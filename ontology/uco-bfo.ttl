@@ -20,6 +20,12 @@
 		;
 	.
 
+drafting:Event
+	a owl:Class ;
+	rdfs:subClassOf obo:BFO_0000008 ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/541> ;
+	.
+
 uco-observable:File
 	rdfs:subClassOf obo:BFO_0000031 ;
 	.
