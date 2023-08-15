@@ -6,9 +6,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix uco-role: <https://ontology.unifiedcyberontology.org/uco/role/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -20,14 +22,57 @@
 		;
 	.
 
+drafting:Endurant
+	a owl:Class ;
+	rdfs:subClassOf
+		obo:BFO_0000002 ,
+		uco-core:UcoObject
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:disjointWith drafting:Perdurant ;
+	.
+
 drafting:Event
 	a owl:Class ;
-	rdfs:subClassOf obo:BFO_0000008 ;
+	rdfs:subClassOf
+		drafting:Perdurant ,
+		obo:BFO_0000008
+		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/541> ;
+	.
+
+drafting:Perdurant
+	a owl:Class ;
+	rdfs:subClassOf
+		obo:BFO_0000003 ,
+		uco-core:UcoObject
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:disjointWith drafting:Endurant ;
+	.
+
+uco-action:Action
+	rdfs:subClassOf drafting:Perdurant ;
+	.
+
+uco-core:Item
+	rdfs:subClassOf drafting:Endurant ;
+	.
+
+uco-identity:Identity
+	rdfs:subClassOf drafting:Endurant ;
 	.
 
 uco-observable:File
 	rdfs:subClassOf obo:BFO_0000031 ;
+	.
+
+uco-observable:ObservablePattern
+	rdfs:subClassOf drafting:Endurant ;
+	.
+
+uco-pattern:LogicalPattern
+	rdfs:subClassOf drafting:Endurant ;
 	.
 
 []

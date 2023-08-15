@@ -6,9 +6,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix uco-role: <https://ontology.unifiedcyberontology.org/uco/role/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -18,11 +20,27 @@
 	owl:imports <http://example.org/ontology/uco-bfo> ;
 	.
 
+kb:Action-561624b7-1ca5-4571-9ef8-3b9bf65f82b4
+	a uco-action:Action ;
+	.
+
 kb:Event-36ca992e-47e5-43a5-b344-71465c222a05
 	a drafting:Event ;
 	.
 
 kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 	a uco-observable:File ;
+	.
+
+kb:Identity-7658570e-f6e1-4fbf-ad6b-d057a38cc7eb
+	a uco-identity:Identity ;
+	.
+
+kb:LogicalPattern-31b4baf1-a8af-4cd8-8648-8946115c04ce
+	a uco-pattern:LogicalPattern ;
+	.
+
+kb:ObservablePattern-43623d97-2877-46c6-a52c-7e636f767ceb
+	a uco-observable:ObservablePattern ;
 	.
 
