@@ -65,7 +65,10 @@ uco-identity:Identity
 	.
 
 uco-location:Location
-	rdfs:subClassOf drafting:Endurant ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		obo:BFO_0000006
+		;
 	.
 
 uco-observable:File
