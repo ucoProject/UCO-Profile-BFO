@@ -9,6 +9,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix uco-role: <https://ontology.unifiedcyberontology.org/uco/role/> .
@@ -34,6 +35,10 @@ kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 
 kb:Identity-7658570e-f6e1-4fbf-ad6b-d057a38cc7eb
 	a uco-identity:Identity ;
+	.
+
+kb:Location-b28d808d-d0f8-495e-b7df-783ce6aabdc3
+	a uco-location:Location ;
 	.
 
 kb:LogicalPattern-31b4baf1-a8af-4cd8-8648-8946115c04ce

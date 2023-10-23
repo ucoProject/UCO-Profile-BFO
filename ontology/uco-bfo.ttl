@@ -9,6 +9,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-pattern: <https://ontology.unifiedcyberontology.org/uco/pattern/> .
 @prefix uco-role: <https://ontology.unifiedcyberontology.org/uco/role/> .
@@ -60,6 +61,10 @@ uco-core:Item
 	.
 
 uco-identity:Identity
+	rdfs:subClassOf drafting:Endurant ;
+	.
+
+uco-location:Location
 	rdfs:subClassOf drafting:Endurant ;
 	.
 
