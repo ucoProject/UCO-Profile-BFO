@@ -53,7 +53,10 @@ drafting:Perdurant
 	.
 
 uco-action:Action
-	rdfs:subClassOf drafting:Perdurant ;
+	rdfs:subClassOf
+		drafting:Perdurant ,
+		obo:BFO_0000015
+		;
 	.
 
 uco-core:Item
