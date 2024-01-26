@@ -33,15 +33,6 @@ drafting:Endurant
 	owl:disjointWith drafting:Perdurant ;
 	.
 
-drafting:Event
-	a owl:Class ;
-	rdfs:subClassOf
-		drafting:Perdurant ,
-		obo:BFO_0000008
-		;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/541> ;
-	.
-
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -56,6 +47,13 @@ uco-action:Action
 	rdfs:subClassOf
 		drafting:Perdurant ,
 		obo:BFO_0000015
+		;
+	.
+
+uco-core:Event
+	rdfs:subClassOf
+		drafting:Perdurant ,
+		obo:BFO_0000008
 		;
 	.
 
