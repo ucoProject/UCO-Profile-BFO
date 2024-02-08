@@ -25,6 +25,10 @@ kb:Action-561624b7-1ca5-4571-9ef8-3b9bf65f82b4
 	a uco-action:Action ;
 	.
 
+kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
+	a uco-observable:ContentData ;
+	.
+
 kb:Event-36ca992e-47e5-43a5-b344-71465c222a05
 	a uco-core:Event ;
 	.
@@ -47,5 +51,10 @@ kb:LogicalPattern-31b4baf1-a8af-4cd8-8648-8946115c04ce
 
 kb:ObservablePattern-43623d97-2877-46c6-a52c-7e636f767ceb
 	a uco-observable:ObservablePattern ;
+	.
+
+kb:Quality-4b765c1f-362c-4562-a50f-7bb781fe4737
+	a drafting:Quality ;
+	obo:BFO_0000080 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd ;
 	.
 

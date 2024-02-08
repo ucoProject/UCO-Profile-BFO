@@ -27,7 +27,7 @@ drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
 		obo:BFO_0000002 ,
-		uco-core:UcoObject
+		uco-core:UcoThing
 		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
 	owl:disjointWith drafting:Perdurant ;
@@ -41,6 +41,15 @@ drafting:Perdurant
 		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
 	owl:disjointWith drafting:Endurant ;
+	.
+
+drafting:Quality
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		obo:BFO_0000019 ,
+		uco-core:UcoInherentCharacterizationThing
+		;
 	.
 
 uco-action:Action
@@ -72,6 +81,10 @@ uco-location:Location
 		;
 	.
 
+uco-observable:ContentData
+	rdfs:subClassOf obo:BFO_0000004 ;
+	.
+
 uco-observable:File
 	rdfs:subClassOf obo:BFO_0000031 ;
 	.
@@ -90,5 +103,13 @@ uco-pattern:LogicalPattern
 	owl:annotatedProperty rdfs:subClassOf ;
 	owl:annotatedSource uco-observable:File ;
 	owl:annotatedTarget obo:BFO_0000031 ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Per usage with a Quality that presents a ContentData object's ability to be measured with the result being a Hash.  This usage with BFO_0000080 requires the quality-bearer be an independent continuant, but does not require a more specific subclass."@en ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSource uco-observable:ContentData ;
+	owl:annotatedTarget obo:BFO_0000004 ;
 	.
 
