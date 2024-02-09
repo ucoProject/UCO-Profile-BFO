@@ -74,6 +74,10 @@ uco-identity:Identity
 	rdfs:subClassOf drafting:Endurant ;
 	.
 
+uco-identity:Person
+	rdfs:subClassOf obo:BFO_0000040 ;
+	.
+
 uco-location:Location
 	rdfs:subClassOf
 		drafting:Endurant ,
@@ -83,6 +87,10 @@ uco-location:Location
 
 uco-observable:ContentData
 	rdfs:subClassOf obo:BFO_0000004 ;
+	.
+
+uco-observable:Device
+	rdfs:subClassOf obo:BFO_0000040 ;
 	.
 
 uco-observable:File

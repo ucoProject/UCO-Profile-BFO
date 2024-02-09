@@ -29,6 +29,10 @@ kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	.
 
+kb:Device-af503a3b-397c-4690-bef9-3972e0f2889d
+	a uco-observable:Device ;
+	.
+
 kb:Event-36ca992e-47e5-43a5-b344-71465c222a05
 	a uco-core:Event ;
 	.
@@ -51,6 +55,10 @@ kb:LogicalPattern-31b4baf1-a8af-4cd8-8648-8946115c04ce
 
 kb:ObservablePattern-43623d97-2877-46c6-a52c-7e636f767ceb
 	a uco-observable:ObservablePattern ;
+	.
+
+kb:Person-aec83773-81b1-4db2-aa8f-59cf745bf558
+	a uco-identity:Person ;
 	.
 
 kb:Quality-4b765c1f-362c-4562-a50f-7bb781fe4737
