@@ -22,7 +22,9 @@ uco_srcdir := $(top_srcdir)/dependencies/CDO-Shapes-BFO/dependencies/UCO
 
 profile_ttls := $(wildcard $(top_srcdir)/ontology/uco-*.ttl)
 
-shape_ttls := $(wildcard $(top_srcdir)/shapes/sh-*.ttl)
+shape_ttls := \
+  $(top_srcdir)/dependencies/CDO-Shapes-BFO/shapes/sh-bfo.ttl \
+  $(wildcard $(top_srcdir)/shapes/sh-*.ttl)
 
 all: \
   monolithic.ttl
