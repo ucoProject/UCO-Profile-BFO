@@ -27,6 +27,11 @@ kb:Action-561624b7-1ca5-4571-9ef8-3b9bf65f82b4
 
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
+	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
+	a uco-observable:ContentDataFacet ;
 	.
 
 kb:Device-af503a3b-397c-4690-bef9-3972e0f2889d
