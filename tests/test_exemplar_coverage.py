@@ -5,22 +5,22 @@
 #
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
-
 
 import logging
 from pathlib import Path
 from typing import Optional, Set
 
-from rdflib import RDF, RDFS, Graph, URIRef
+from rdflib import OWL, RDF, RDFS, Graph, URIRef
 
+NS_OWL = OWL
 NS_RDF = RDF
 NS_RDFS = RDFS
 
@@ -31,9 +31,9 @@ top_srcdir = srcdir.parent
 def test_exemplar_coverage() -> None:
     """
     This test confirms that for each class C in the profile ontology (or
-    ontologies) designated a subclass of some C', and each property P
-    designated a subproperty of some P', C (/P) is used in the exemplars
-    graph.
+    ontologies) designated a class, or a subclass of some C'; and each
+    property P designated a property, or a subproperty of some P';
+    C (/P) is used in the exemplars graph.
     """
     exemplar_graph = Graph()
     profile_graph = Graph()
@@ -41,6 +41,9 @@ def test_exemplar_coverage() -> None:
     combined_graph = Graph()
 
     for filepath in (top_srcdir / "ontology").iterdir():
+        if filepath.name.startswith("_"):
+            # Skip temporary build artifacts.
+            continue
         if filepath.name.startswith("."):
             # Skip quality control test artifacts.
             continue
@@ -61,6 +64,10 @@ def test_exemplar_coverage() -> None:
 
     classes_mapped: Set[URIRef] = set()
     classes_with_exemplars: Set[URIRef] = set()
+
+    for triple in profile_graph.triples((None, NS_RDF.type, NS_OWL.Class)):
+        assert isinstance(triple[0], URIRef)
+        classes_mapped.add(triple[0])
 
     for triple in profile_graph.triples((None, NS_RDFS.subClassOf, None)):
         assert isinstance(triple[0], URIRef)
@@ -98,6 +105,14 @@ ASK {
     properties_mapped: Set[URIRef] = set()
     properties_with_exemplars: Set[URIRef] = set()
 
+    for n_property_class in {
+        NS_OWL.AnnotationProperty,
+        NS_OWL.DatatypeProperty,
+        NS_OWL.ObjectProperty,
+    }:
+        for triple in profile_graph.triples((None, NS_RDF.type, n_property_class)):
+            assert isinstance(triple[0], URIRef)
+            properties_mapped.add(triple[0])
     for triple in profile_graph.triples((None, NS_RDFS.subPropertyOf, None)):
         assert isinstance(triple[0], URIRef)
         properties_mapped.add(triple[0])

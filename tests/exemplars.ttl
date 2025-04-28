@@ -68,6 +68,6 @@ kb:Person-aec83773-81b1-4db2-aa8f-59cf745bf558
 
 kb:Quality-4b765c1f-362c-4562-a50f-7bb781fe4737
 	a drafting:Quality ;
-	obo:BFO_0000080 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd ;
+	obo:BFO_0000197 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd ;
 	.
 

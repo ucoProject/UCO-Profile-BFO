@@ -5,12 +5,12 @@
 #
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -20,9 +20,13 @@ top_srcdir := $(shell cd .. ; pwd)
 
 uco_srcdir := $(top_srcdir)/dependencies/CDO-Shapes-BFO/dependencies/UCO
 
+test_pys := $(wildcard test_*.py)
+
 profile_ttls := $(wildcard $(top_srcdir)/ontology/uco-*.ttl)
 
-shape_ttls := $(wildcard $(top_srcdir)/shapes/sh-*.ttl)
+shape_ttls := \
+  $(top_srcdir)/dependencies/CDO-Shapes-BFO/shapes/sh-bfo.ttl \
+  $(wildcard $(top_srcdir)/shapes/sh-*.ttl)
 
 all: \
   monolithic.ttl
@@ -39,9 +43,9 @@ all: \
 	touch $@
 
 .pytest.done.log: \
+  $(test_pys) \
   exemplars.ttl \
-  monolithic.ttl \
-  test_exemplar_coverage.py
+  monolithic.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && pytest \
 	    --log-level=DEBUG
@@ -52,6 +56,8 @@ check: \
   .pyshacl.done.log
 
 clean:
+	@rm -rf \
+	  __pycache__
 	@rm -f \
 	  .*.done.log \
 	  exemplars-entailment.ttl \
