@@ -50,6 +50,7 @@ drafting:Quality
 		obo:BFO_0000019 ,
 		uco-core:UcoInherentCharacterizationThing
 		;
+	owl:disjointWith uco-core:Facet ;
 	.
 
 uco-action:Action
@@ -66,8 +67,17 @@ uco-core:Event
 		;
 	.
 
+uco-core:Facet
+	rdfs:subClassOf obo:BFO_0000020 ;
+	owl:disjointWith drafting:Quality ;
+	.
+
 uco-core:Item
 	rdfs:subClassOf drafting:Endurant ;
+	.
+
+uco-core:hasFacet
+	rdfs:subPropertyOf obo:BFO_0000196 ;
 	.
 
 uco-identity:Identity
@@ -103,6 +113,22 @@ uco-observable:ObservablePattern
 
 uco-pattern:LogicalPattern
 	rdfs:subClassOf drafting:Endurant ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Note that BFO 196 ('bearer of') has a domain restriction, that the subject not be a spatial region.  This could cause conflicts with UCO's Location namespace: If uco-location:Location or some subclass are believed to be specializations of BFO 6 ('spatial region'), then with this alignment of BFO 196, they cannot have a Facet."@en ;
+	owl:annoatedProperty rdfs:subPropertyOf ;
+	owl:annotatedObject obo:BFO_0000196 ;
+	owl:annotatedSubject uco-core:hasFacet ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Per Facet appearing to be aligned with a subclass of Specifically Dependent Continuant that is neither a Quality, nor necessarily a Realizable Entity."@en ;
+	owl:annotatedProperty owl:disjointWith ;
+	owl:annotatedSource uco-core:Facet ;
+	owl:annotatedTarget drafting:Quality ;
 	.
 
 []
