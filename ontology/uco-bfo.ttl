@@ -50,6 +50,7 @@ drafting:Quality
 		obo:BFO_0000019 ,
 		uco-core:UcoInherentCharacterizationThing
 		;
+	owl:disjointWith uco-core:Facet ;
 	.
 
 uco-action:Action
@@ -68,6 +69,7 @@ uco-core:Event
 
 uco-core:Facet
 	rdfs:subClassOf obo:BFO_0000020 ;
+	owl:disjointWith drafting:Quality ;
 	.
 
 uco-core:Item
@@ -119,6 +121,14 @@ uco-pattern:LogicalPattern
 	owl:annoatedProperty rdfs:subPropertyOf ;
 	owl:annotatedObject obo:BFO_0000196 ;
 	owl:annotatedSubject uco-core:hasFacet ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Per Facet appearing to be aligned with a subclass of Specifically Dependent Continuant that is neither a Quality, nor necessarily a Realizable Entity."@en ;
+	owl:annotatedProperty owl:disjointWith ;
+	owl:annotatedSource uco-core:Facet ;
+	owl:annotatedTarget drafting:Quality ;
 	.
 
 []
