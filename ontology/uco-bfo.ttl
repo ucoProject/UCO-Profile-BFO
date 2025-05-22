@@ -33,13 +33,30 @@ drafting:Endurant
 	owl:disjointWith drafting:Perdurant ;
 	.
 
+drafting:Instant
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:InstantaneousPerdurant ,
+		obo:BFO_0000203
+		;
+	.
+
+drafting:InstantaneousPerdurant
+	a owl:Class ;
+	rdfs:subClassOf drafting:Perdurant ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/651> ;
+	.
+
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
 		obo:BFO_0000003 ,
 		uco-core:UcoObject
 		;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
+	rdfs:isDefinedBy
+		<https://github.com/ucoProject/UCO/issues/544> ,
+		<https://github.com/ucoProject/UCO/issues/651>
+		;
 	owl:disjointWith drafting:Endurant ;
 	.
 
