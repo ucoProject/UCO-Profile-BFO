@@ -2,7 +2,7 @@
 
 ![Repository Status](https://img.shields.io/badge/-exploratory-informational)
 
-This repository explores UCO under a usage profile assuming adoption of [BFO](https://github.com/BFO-ontology/BFO).
+This repository explores UCO under a usage profile assuming adoption of [BFO](https://github.com/BFO-ontology/BFO-2020).
 
 The CDO Profile development rationale and design is [here](https://cyberdomainontology.org/ontology/development/#profiles).
 
