@@ -70,6 +70,54 @@ drafting:Quality
 	owl:disjointWith uco-core:Facet ;
 	.
 
+obo:BFO_0000002
+	rdfs:label "continuant"@en ;
+	.
+
+obo:BFO_0000003
+	rdfs:label "occurrent"@en ;
+	.
+
+obo:BFO_0000004
+	rdfs:label "independent continuant"@en ;
+	.
+
+obo:BFO_0000006
+	rdfs:label "spatial region"@en ;
+	.
+
+obo:BFO_0000008
+	rdfs:label "temporal region"@en ;
+	.
+
+obo:BFO_0000015
+	rdfs:label "process"@en ;
+	.
+
+obo:BFO_0000019
+	rdfs:label "quality"@en ;
+	.
+
+obo:BFO_0000020
+	rdfs:label "specifically dependent continuant"@en ;
+	.
+
+obo:BFO_0000031
+	rdfs:label "generically dependent continuant"@en ;
+	.
+
+obo:BFO_0000040
+	rdfs:label "material entity"@en ;
+	.
+
+obo:BFO_0000196
+	rdfs:label "bearer of"@en ;
+	.
+
+obo:BFO_0000203
+	rdfs:label "temporal instant"@en ;
+	.
+
 uco-action:Action
 	rdfs:subClassOf
 		drafting:Perdurant ,
