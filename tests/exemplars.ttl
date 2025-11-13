@@ -21,7 +21,34 @@
 	owl:imports <http://example.org/ontology/uco-bfo> ;
 	.
 
+kb:Action-3631e758-b074-495e-b50d-11080f10db19
+	a uco-action:Action ;
+	uco-action:instrument kb:Device-2ec8a869-d6ba-431e-811d-c47aa493c553 ;
+	.
+
 kb:Action-561624b7-1ca5-4571-9ef8-3b9bf65f82b4
+	a uco-action:Action ;
+	.
+
+kb:Action-6df3fd13-3c77-46a8-84bc-c819a51e07f5
+	a uco-observable:Action ;
+	uco-action:participant kb:Person-adebbee8-57f2-4a9c-b648-98f34a302316 ;
+	uco-action:performer kb:Person-c457e114-10a6-46d3-863f-dd69c30e41c6 ;
+	.
+
+kb:Action-b948a17d-02cf-4b52-af5c-745ee55ad696
+	a uco-action:Action ;
+	uco-action:object kb:Device-411f82ab-65db-461d-b913-f00df2394c9a ;
+	uco-action:result kb:File-f2c3497e-da39-4bbf-918a-511f13c22dc4 ;
+	uco-core:description "A disk is imaged." ;
+	.
+
+kb:Action-dba896de-eedd-45e1-870d-f933dff3bb78
+	a uco-observable:Action ;
+	uco-action:subaction kb:Action-fed2acb1-814d-4499-96b5-4151a58a6967 ;
+	.
+
+kb:Action-fed2acb1-814d-4499-96b5-4151a58a6967
 	a uco-action:Action ;
 	.
 
@@ -34,6 +61,14 @@ kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
 	a uco-observable:ContentDataFacet ;
 	.
 
+kb:Device-2ec8a869-d6ba-431e-811d-c47aa493c553
+	a uco-observable:Device ;
+	.
+
+kb:Device-411f82ab-65db-461d-b913-f00df2394c9a
+	a uco-observable:Device ;
+	.
+
 kb:Device-af503a3b-397c-4690-bef9-3972e0f2889d
 	a uco-observable:Device ;
 	.
@@ -44,6 +79,13 @@ kb:Event-36ca992e-47e5-43a5-b344-71465c222a05
 
 kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 	a uco-observable:File ;
+	.
+
+kb:File-f2c3497e-da39-4bbf-918a-511f13c22dc4
+	a
+		uco-observable:File ,
+		uco-observable:Image
+		;
 	.
 
 kb:Identity-7658570e-f6e1-4fbf-ad6b-d057a38cc7eb
@@ -66,7 +108,15 @@ kb:ObservablePattern-43623d97-2877-46c6-a52c-7e636f767ceb
 	a uco-observable:ObservablePattern ;
 	.
 
+kb:Person-adebbee8-57f2-4a9c-b648-98f34a302316
+	a uco-identity:Person ;
+	.
+
 kb:Person-aec83773-81b1-4db2-aa8f-59cf745bf558
+	a uco-identity:Person ;
+	.
+
+kb:Person-c457e114-10a6-46d3-863f-dd69c30e41c6
 	a uco-identity:Person ;
 	.
 
