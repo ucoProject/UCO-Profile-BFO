@@ -105,7 +105,7 @@ generated-local.ttl: \
 	  && rdfpipe \
 	    --output-format turtle \
 	    $(ttl_basenames) \
-	    .empty.ttl
+	    .empty.ttl \
 	    > _$@
 	mv _$@ $@
 
