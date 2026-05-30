@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
-    <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/BFO.ttl" name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/dependencies/collections-ontology/collections.owl" name="http://purl.org/co"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/dependencies/error/docs/current/error.ttl" name="http://purl.org/spar/error"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/ontology/co/co.ttl" name="https://ontology.unifiedcyberontology.org/co"/>
@@ -38,5 +37,6 @@
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/ontology/uco/victim/victim.ttl" name="https://ontology.unifiedcyberontology.org/uco/victim/1.4.0"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary/1.4.0"/>
+    <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/dependencies/formatted-BFO.ttl" name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/CDO-Shapes-BFO/shapes/sh-bfo.ttl" name="http://example.org/shapes/sh-bfo"/>
 </catalog>
