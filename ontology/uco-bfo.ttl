@@ -125,6 +125,30 @@ uco-action:Action
 		;
 	.
 
+uco-action:instrument
+	rdfs:subPropertyOf obo:BFO_0000057 ;
+	.
+
+uco-action:object
+	rdfs:subPropertyOf obo:BFO_0000057 ;
+	.
+
+uco-action:participant
+	rdfs:subPropertyOf obo:BFO_0000057 ;
+	.
+
+uco-action:performer
+	rdfs:subPropertyOf obo:BFO_0000057 ;
+	.
+
+uco-action:result
+	rdfs:subPropertyOf obo:BFO_0000057 ;
+	.
+
+uco-action:subaction
+	rdfs:subPropertyOf obo:BFO_0000117 ;
+	.
+
 uco-core:Event
 	rdfs:subClassOf
 		drafting:Perdurant ,
