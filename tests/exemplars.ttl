@@ -52,6 +52,10 @@ kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 	a uco-observable:File ;
 	.
 
+kb:Function-eeaab25f-e441-42e0-bcf1-a62e112ed987
+	a obo:BFO_0000034 ;
+	.
+
 kb:GenericCapability-65fa9dd3-501c-45f6-ac44-0a26100d5bb8
 	a drafting:GenericCapability ;
 	.

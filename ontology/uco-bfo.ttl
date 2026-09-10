@@ -131,6 +131,13 @@ obo:BFO_0000031
 	rdfs:label "generically dependent continuant"@en ;
 	.
 
+obo:BFO_0000034
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:label "function"@en ;
+	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf) propose Capability as a subclass of Disposition, but superclass of Function."@en ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	.
+
 obo:BFO_0000040
 	rdfs:label "material entity"@en ;
 	.
