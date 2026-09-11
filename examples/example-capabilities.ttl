@@ -30,7 +30,7 @@ kb:Capability-ee7cbf65-4ed9-45e3-a307-15db4952dbca
 	.
 
 kb:Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a
-	a kb:CapabilityToReadSQLiteFiles ;
+	a kb:PersonalCapabilityToReadSQLiteFiles ;
 	rdfs:label "The capability of Person 1 to read SQLite files"@en ;
 	obo:BFO_0000197 kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ;
 	.
@@ -46,13 +46,22 @@ kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07
 	rdfs:label "Person 1"@en ;
 	.
 
+kb:PersonalCapabilityToReadSQLiteFiles
+	a owl:Class ;
+	rdfs:subClassOf
+		kb:CapabilityToReadSQLiteFiles ,
+		drafting:SpecificCapability
+		;
+	rdfs:label "personal capability to read SQLite files"@en ;
+	.
+
 obo:BFO_0000197
 	rdfs:label "inheres in"@en ;
 	.
 
 obo:MF_0000047
 	a owl:Class ;
-	rdfs:subClassOf drafting:Capability ;
+	rdfs:subClassOf drafting:SpecificCapability ;
 	rdfs:label "capability to play violin"@en ;
 	rdfs:comment "Class stub borrowed from Mental Functioning ontology."@en ;
 	rdfs:isDefinedBy <http://purl.obolibrary.org/obo/MF/2025-07-08/MF.owl> ;
