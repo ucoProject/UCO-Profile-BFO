@@ -18,3 +18,34 @@
 		;
 	.
 
+sh-uco-bfo:Capability-shape
+	a sh:NodeShape ;
+	sh:targetClass drafting:Capability ;
+	sh:xone (
+		[
+			a sh:NodeShape ;
+			sh:class drafting:GenericCapability ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class drafting:SpecificCapability ;
+		]
+	) ;
+	.
+
+sh-uco-bfo:GenericCapability-isConcretizedBy-shape
+	a sh:PropertyShape ;
+	sh:class drafting:SpecificCapability ;
+	sh:path obo:BFO_0000058 ;
+	.
+
+sh-uco-bfo:GenericCapability-shape
+	a sh:NodeShape ;
+	sh:property sh-uco-bfo:GenericCapability-isConcretizedBy-shape ;
+	sh:targetClass drafting:GenericCapability ;
+	.
+
+obo:BFO_0000058
+	rdfs:label "is concretized by"@en ;
+	.
+
