@@ -12,6 +12,19 @@
 	rdfs:comment "Shapes in this graph are scoped to quality control for illustrative example data graphs."@en ;
 	.
 
+sh-qc:GenericallyDependentContinuant-genericallyDependsOn-shape
+	a sh:PropertyShape ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path obo:BFO_0000084 ;
+	.
+
+sh-qc:GenericallyDependentContinuant-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape requires every generically dependent continuant have some bearer designated."@en ;
+	sh:property sh-qc:GenericallyDependentContinuant-genericallyDependsOn-shape ;
+	sh:targetClass obo:BFO_0000031 ;
+	.
+
 sh-qc:SpecificallyDependentContinuant-inheresIn-shape
 	a sh:PropertyShape ;
 	sh:minCount "1"^^xsd:integer ;
@@ -27,6 +40,14 @@ sh-qc:SpecificallyDependentContinuant-shape
 
 obo:BFO_0000020
 	rdfs:label "specifically dependent continuant"@en ;
+	.
+
+obo:BFO_0000031
+	rdfs:label "generically dependent continuant"@en ;
+	.
+
+obo:BFO_0000084
+	rdfs:label "generically depends on"@en ;
 	.
 
 obo:BFO_0000197
