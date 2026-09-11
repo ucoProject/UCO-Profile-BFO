@@ -1,4 +1,5 @@
 @prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,5 +10,26 @@
 <http://example.org/shapes/sh-qc>
 	a owl:Ontology ;
 	rdfs:comment "Shapes in this graph are scoped to quality control for illustrative example data graphs."@en ;
+	.
+
+sh-qc:SpecificallyDependentContinuant-inheresIn-shape
+	a sh:PropertyShape ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path obo:BFO_0000197 ;
+	.
+
+sh-qc:SpecificallyDependentContinuant-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape requires every specifically dependent continuant to have its bearer designated."@en ;
+	sh:property sh-qc:SpecificallyDependentContinuant-inheresIn-shape ;
+	sh:targetClass obo:BFO_0000020 ;
+	.
+
+obo:BFO_0000020
+	rdfs:label "specifically dependent continuant"@en ;
+	.
+
+obo:BFO_0000197
+	rdfs:label "inheres in"@en ;
 	.
 
