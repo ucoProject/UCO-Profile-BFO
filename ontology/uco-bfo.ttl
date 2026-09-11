@@ -23,6 +23,16 @@
 		;
 	.
 
+drafting:Capability
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:GenericCapability ,
+		obo:BFO_0000016
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	.
+
 drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -31,6 +41,17 @@ drafting:Endurant
 		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/544> ;
 	owl:disjointWith drafting:Perdurant ;
+	.
+
+drafting:GenericCapability
+	a owl:Class ;
+	rdfs:subClassOf
+		obo:BFO_0000002 ,
+		uco-core:UcoObject
+		;
+	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf), Section 4's paragraph prior to 4.1, makes specific remarks on 'capabilities' of software being a shorthand for a physical thing executing the software; also, on software being a Generically Dependent Continuant, which in BFO does not bear Dispositions.  Hence, Capability within UCO, being often concerned with software, would at best be a superclass of, and imply realizability of, the Capability class proposed by Beverly et al.  This is why the class is called GenericCapability."@en ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
 	.
 
 drafting:Instant
@@ -94,6 +115,10 @@ obo:BFO_0000015
 	rdfs:label "process"@en ;
 	.
 
+obo:BFO_0000016
+	rdfs:label "disposition"@en ;
+	.
+
 obo:BFO_0000019
 	rdfs:label "quality"@en ;
 	.
@@ -104,6 +129,13 @@ obo:BFO_0000020
 
 obo:BFO_0000031
 	rdfs:label "generically dependent continuant"@en ;
+	.
+
+obo:BFO_0000034
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:label "function"@en ;
+	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf) propose Capability as a subclass of Disposition, but superclass of Function."@en ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
 	.
 
 obo:BFO_0000040
