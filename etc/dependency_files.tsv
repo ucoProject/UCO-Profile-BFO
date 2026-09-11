@@ -1,3 +1,4 @@
 http://example.org/ontology/uco-bfo	${top_srcdir}/ontology/uco-bfo.ttl
 http://example.org/shapes/sh-bfo	${top_srcdir}/dependencies/CDO-Shapes-BFO/shapes/sh-bfo.ttl
+http://example.org/shapes/sh-uco-bfo	${top_srcdir}/shapes/sh-uco-bfo.ttl
 http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl	${top_srcdir}/dependencies/CDO-Shapes-BFO/dependencies/formatted-BFO.ttl
