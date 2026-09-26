@@ -26,11 +26,19 @@
 drafting:Capability
 	a owl:Class ;
 	rdfs:subClassOf
-		drafting:GenericCapability ,
-		obo:BFO_0000016
+		drafting:Endurant ,
+		uco-core:UcoInherentCharacterizationThing
 		;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
-	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf), Section 4's paragraph prior to 4.1, makes specific remarks on 'capabilities' of software being a shorthand for a capability of a physical thing that can execute the software; also, on software being a Generically Dependent Continuant, which in BFO does not bear Dispositions.  Hence, Capability within UCO, being often concerned with software (see SoftwareCapability), aligns as a superclass, rather than a subclass, of the Capability class proposed by Beverly et al.  SpecificCapability is defined to satisfy the design of Beverly et al."@en ;
+	rdfs:isDefinedBy
+		<https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ,
+		<https://github.com/ucoProject/UCO/issues/682>
+		;
+	rdfs:seeAlso drafting:SoftwareCapability ;
+	owl:disjointUnionOf (
+		drafting:GenericCapability
+		drafting:SpecificCapability
+	) ;
 	.
 
 drafting:Endurant
@@ -46,12 +54,18 @@ drafting:Endurant
 drafting:GenericCapability
 	a owl:Class ;
 	rdfs:subClassOf
-		obo:BFO_0000002 ,
-		uco-core:UcoObject
+		drafting:Capability ,
+		obo:BFO_0000031 ,
+		[
+			a owl:Restriction ;
+			owl:onProperty obo:BFO_0000058 ;
+			owl:allValuesFrom drafting:SpecificCapability ;
+		]
 		;
-	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf), Section 4's paragraph prior to 4.1, makes specific remarks on 'capabilities' of software being a shorthand for a physical thing executing the software; also, on software being a Generically Dependent Continuant, which in BFO does not bear Dispositions.  Hence, Capability within UCO, being often concerned with software, would at best be a superclass of, and imply realizability of, the Capability class proposed by Beverly et al.  This is why the class is called GenericCapability."@en ;
+	rdfs:comment '"Generic Capability" is named for "Generically Dependent Continuant", BFO_0000031.  The relation between "generic" and "specific" in this BFO context is not a superclass/subclass relationship.'@en ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
 	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	owl:disjointWith drafting:SpecificCapability ;
 	.
 
 drafting:Instant
@@ -89,6 +103,31 @@ drafting:Quality
 		uco-core:UcoInherentCharacterizationThing
 		;
 	owl:disjointWith uco-core:Facet ;
+	.
+
+drafting:SoftwareCapability
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:GenericCapability ,
+		[
+			a owl:Restriction ;
+			owl:onProperty obo:BFO_0000084 ;
+			owl:someValuesFrom uco-observable:Computer ;
+		]
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	.
+
+drafting:SpecificCapability
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:Capability ,
+		obo:BFO_0000016
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	owl:disjointWith drafting:GenericCapability ;
 	.
 
 obo:BFO_0000002
@@ -132,7 +171,7 @@ obo:BFO_0000031
 	.
 
 obo:BFO_0000034
-	rdfs:subClassOf drafting:Capability ;
+	rdfs:subClassOf drafting:SpecificCapability ;
 	rdfs:label "function"@en ;
 	rdfs:comment "Beverly et al. 2024 (ontocom-2.pdf) propose Capability as a subclass of Disposition, but superclass of Function."@en ;
 	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
@@ -140,6 +179,14 @@ obo:BFO_0000034
 
 obo:BFO_0000040
 	rdfs:label "material entity"@en ;
+	.
+
+obo:BFO_0000058
+	rdfs:label "is concretized by"@en ;
+	.
+
+obo:BFO_0000084
+	rdfs:label "generically depends on"@en ;
 	.
 
 obo:BFO_0000196

@@ -1,0 +1,70 @@
+# imports: http://example.org/ontology/uco-bfo
+
+@prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix kb: <http://example.org/kb/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/kb>
+	a owl:Ontology ;
+	rdfs:comment "This data graph demonstrates capabilities, to read SQLite files and to play violin, as held by a person."@en ;
+	rdfs:seeAlso
+		kb:Capability-ee7cbf65-4ed9-45e3-a307-15db4952dbca ,
+		kb:Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a ,
+		kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07
+		;
+	owl:imports <http://example.org/ontology/uco-bfo> ;
+	sh:shapesGraph <http://example.org/shapes/sh-uco-bfo> ;
+	.
+
+kb:Capability-ee7cbf65-4ed9-45e3-a307-15db4952dbca
+	a obo:MF_0000047 ;
+	rdfs:label "The capability of Person 1 to play violin"@en ;
+	obo:BFO_0000197 kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ;
+	.
+
+kb:Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a
+	a kb:PersonalCapabilityToReadSQLiteFiles ;
+	rdfs:label "The capability of Person 1 to read SQLite files"@en ;
+	obo:BFO_0000197 kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ;
+	.
+
+kb:CapabilityToReadSQLiteFiles
+	a owl:Class ;
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:label "capability to read SQLite files"@en ;
+	.
+
+kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07
+	a uco-identity:Person ;
+	rdfs:label "Person 1"@en ;
+	.
+
+kb:PersonalCapabilityToReadSQLiteFiles
+	a owl:Class ;
+	rdfs:subClassOf
+		kb:CapabilityToReadSQLiteFiles ,
+		drafting:SpecificCapability
+		;
+	rdfs:label "personal capability to read SQLite files"@en ;
+	.
+
+obo:BFO_0000197
+	rdfs:label "inheres in"@en ;
+	.
+
+obo:MF_0000047
+	a owl:Class ;
+	rdfs:subClassOf drafting:SpecificCapability ;
+	rdfs:label "capability to play violin"@en ;
+	rdfs:comment "Class stub borrowed from Mental Functioning ontology."@en ;
+	rdfs:isDefinedBy <http://purl.obolibrary.org/obo/MF/2025-07-08/MF.owl> ;
+	rdfs:seeAlso <https://github.com/jannahastings/mental-functioning-ontology> ;
+	.
+
