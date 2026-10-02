@@ -1,0 +1,17 @@
+PREFIX kb: <http://example.org/kb/>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?nBearer ?nCapability ?lCapabilityLabel
+WHERE {
+	?nCapability
+		a/rdfs:subClassOf* kb:CapabilityToReadSQLiteFiles ;
+		rdfs:label ?lCapabilityLabel ;
+		.
+	OPTIONAL {
+		# obo:BFO_0000197: "inheres in"
+		?nCapability
+			obo:BFO_0000197 ?nBearer ;
+			.
+	}
+}
+ORDER BY ?nBearer ?nCapability
