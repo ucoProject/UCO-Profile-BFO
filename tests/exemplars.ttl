@@ -27,8 +27,12 @@ kb:Action-561624b7-1ca5-4571-9ef8-3b9bf65f82b4
 	a uco-action:Action ;
 	.
 
+kb:Capability-18c6abb5-07c7-4f5b-98f5-ed65fc5a31a2
+	a drafting:GenericCapability ;
+	.
+
 kb:Capability-2b0c4325-9eac-490c-8168-8737f18e16b0
-	a drafting:Capability ;
+	a drafting:SpecificCapability ;
 	.
 
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
@@ -54,6 +58,10 @@ kb:File-e364d7d2-25c8-4d4a-95d1-b03f73934e83
 
 kb:Function-eeaab25f-e441-42e0-bcf1-a62e112ed987
 	a obo:BFO_0000034 ;
+	.
+
+kb:GenericCapability-18c6abb5-07c7-4f5b-98f5-ed65fc5a31a2
+	a drafting:GenericCapability ;
 	.
 
 kb:GenericCapability-65fa9dd3-501c-45f6-ac44-0a26100d5bb8
@@ -87,5 +95,13 @@ kb:Person-aec83773-81b1-4db2-aa8f-59cf745bf558
 kb:Quality-4b765c1f-362c-4562-a50f-7bb781fe4737
 	a drafting:Quality ;
 	obo:BFO_0000197 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd ;
+	.
+
+kb:SoftwareCapability-0076c9df-2949-471b-9b43-3e0708eb1f63
+	a drafting:SoftwareCapability ;
+	.
+
+kb:SpecificCapability-8288433f-dbbe-4287-97c3-59f58cf7fa6e
+	a drafting:SpecificCapability ;
 	.
 
