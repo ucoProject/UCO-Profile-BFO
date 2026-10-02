@@ -1,0 +1,28 @@
+{
+    "head": {
+        "vars": [
+            "nBearer",
+            "nCapability",
+            "lCapabilityLabel"
+        ]
+    },
+    "results": {
+        "bindings": [
+            {
+                "lCapabilityLabel": {
+                    "type": "literal",
+                    "value": "The capability of Person 1 to read SQLite files",
+                    "xml:lang": "en"
+                },
+                "nBearer": {
+                    "type": "uri",
+                    "value": "http://example.org/kb/Person-7b2972ab-8c12-4239-919d-afd5e5388b07"
+                },
+                "nCapability": {
+                    "type": "uri",
+                    "value": "http://example.org/kb/Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a"
+                }
+            }
+        ]
+    }
+}
