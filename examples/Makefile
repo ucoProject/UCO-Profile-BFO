@@ -22,7 +22,8 @@ example_ttls := $(wildcard example-*.ttl)
 
 validation_done_logs := $(foreach example_ttl,$(example_ttls),.$(example_ttl).validation.done.log)
 
-all:
+all: \
+  query-capabilities.json
 
 .example-%.validation.done.log: \
   example-% \
@@ -51,3 +52,23 @@ check: \
 clean:
 	@rm -f \
 	  .*.done.log
+
+query-capabilities.json: \
+  $(top_srcdir)/ontology/generated-ontology.ttl \
+  example-capabilities.ttl \
+  query-capabilities.sparql
+	source ../venv/bin/activate \
+	  && rdfpipe \
+	    --output-format turtle \
+	    $(top_srcdir)/ontology/generated-ontology.ttl \
+	    example-capabilities.ttl \
+	    | sparqlquery \
+	      - \
+	      --queryfile query-capabilities.sparql \
+	      > __$@
+	python3 -m json.tool \
+	  --sort-keys \
+	  __$@ \
+	  _$@
+	rm __$@
+	mv _$@ $@
