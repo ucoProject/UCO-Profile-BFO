@@ -60,10 +60,6 @@ kb:Function-eeaab25f-e441-42e0-bcf1-a62e112ed987
 	a obo:BFO_0000034 ;
 	.
 
-kb:GenericCapability-18c6abb5-07c7-4f5b-98f5-ed65fc5a31a2
-	a drafting:GenericCapability ;
-	.
-
 kb:GenericCapability-65fa9dd3-501c-45f6-ac44-0a26100d5bb8
 	a drafting:GenericCapability ;
 	.
